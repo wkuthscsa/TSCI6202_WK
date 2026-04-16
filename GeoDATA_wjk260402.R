@@ -40,12 +40,12 @@ ggplot(data=fqhc_county2)+
   geom_sf(data=fqhc_sf, color="pink", size=1.5, alpha=0.3)+
   geom_sf(data=shape_file_street_address, color="blue")
 
-
-
+geom_sf(Data=shapefile_addresses, color='green')
 #Interactive Mapping
 tmap_mode("view")
 tm_shape(fqhc_county2)+
-  tm_polygons(alpha=0.1,id="clinic_count_raw")+
-  tm_shape(fqhc_sf,color="red")
+  tm_polygons(fill="clinic_count_raw")+
+  tm_shape(shape_file_street_address)+
+  tm_dots(fill="darkgreen", fill_alpha=0.5, size=0.2)
 
 View(fqhc_county2)
