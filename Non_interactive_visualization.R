@@ -32,7 +32,7 @@ ggplot(demographics, aes(x=RACE, y=timetoevent, color=GENDER)) +
   
   facet_grid(rows=vars(MARITAL), cols=vars(STATE))
 
-subset(demographics,is.na(MARITAL)&RACE=="asian") %>% View()
+subset(demographics,is.na(MARITAL)&RACE=="asian") %>% pander()
 
 pchShow <-
   function(extras = c("*",".", "o","O","0","+","-","|","%","#"),
