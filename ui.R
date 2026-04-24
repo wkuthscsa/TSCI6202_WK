@@ -23,7 +23,9 @@ fluidPage(titlePanel("Old Faithful Geyser Data"),
               tabPanel(title = "Survival", value = "survival_tab",
                        plotOutput("survivalPlot1")
                        ),
-              tabPanel(title = "Relationships", value = "relationships_tab"),
+              tabPanel(title = "Relationships", value = "relationships_tab",
+                       plotOutput("relationshipPlot1"),plotOutput("relationshipPlot2")
+                       ),
               tabPanel(title = "Map", value = "map_tab"),
               tabPanel(title = "Debug", value = "debug_tab")
             )
