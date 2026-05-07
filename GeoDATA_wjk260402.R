@@ -6,6 +6,7 @@ library(ggplot2)    # We use the same ggplot2 grammar for maps via geom_sf()
 library(rio)        # For importing CSVs
 library(tidygeocoder)
 library(tmap)
+
 texascounties <- counties(state = "TX", cb = TRUE)
 ggplot(data=texascounties)+
   geom_sf()
@@ -48,4 +49,9 @@ tm_shape(fqhc_county2)+
   tm_shape(shape_file_street_address)+
   tm_dots(fill="darkgreen", fill_alpha=0.5, size=0.2)
 
+save(
+  fqhc_county2,
+  shape_file_street_address,
+  file = 'geodata.RData'
+)
 
